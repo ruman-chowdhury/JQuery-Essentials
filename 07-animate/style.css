@@ -1,0 +1,38 @@
+
+.box{
+	width: 120px;
+	height: 100px;
+	margin: 15% auto;
+	border: 2px solid #777;
+	background: salmon;
+/*position relative so that it can move*/
+	position: relative; 
+}
+
+.box p{
+	padding: 25%;
+}
+
+.navArrows{
+	width: 120px;
+	height: 80px;
+	margin: 20% auto;
+	border: 2px solid #777;
+	background: black;
+}
+.navArrows #up{
+	display: block;
+	margin: auto;
+	margin-top: 8px;
+}
+.navArrows #left{
+	display: inline-block;
+	float: left;
+}
+.navArrows #right{
+	float: right;
+}
+.navArrows #down{
+	display: block;
+	margin: auto;
+}

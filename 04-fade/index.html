@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Fade</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	
+	<h1 id="heading">Jquery fade</h1>
+
+	<div id="box1"></div>
+	<button id="buttonFadeIn" type="button">Fade In</button>
+	<button id="buttonFadeOut" type="button">Fade Out</button>
+
+	<hr>
+	<div id="box2"></div>
+	<button id="buttonFadeToggle" type="button">Fade Toggle</button>
+
+	<hr>
+	<div id="box3"></div>
+	<button id="buttonFadeTo" type="button">Fade To</button>
+	
+
+	<!-- ===js file ======-->
+	<script src="js/jquery-3.4.1.min.js" type="text/javascript"></script>
+	<!-- <script src="js/main.js" type="text/javascript"></script> -->
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			
+			// hide/show with speed	
+			$("#buttonFadeIn").click(function(){
+				$("#box1").fadeIn(1000);
+			});
+			$("#buttonFadeOut").click(function(){
+				$("#box1").fadeOut(1000);
+			});
+
+			//fade toggle is fadeIn and out together
+			$("#buttonFadeToggle").click(function(){
+				$("#box2").fadeToggle(2000);
+			});
+
+			//fadeTo reduce opacity between 0 to 1. we can also pass a function parameter
+			$("#buttonFadeTo").click(function(){
+				$("#box3").fadeTo(2000,0.25,function(){
+					//after reduce opacity take some action
+					$(this).text('box opacity is low !!');
+				});
+			});
+		});
+	</script>
+</body>
+</html>

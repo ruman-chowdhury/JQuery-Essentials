@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Chaining</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	
+	<div class="box">
+		<p>Ruman</p>
+	</div>
+
+	<div class="navArrows">
+		<button id="up">Up</button>
+		<button id="left">Left</button>
+		<button id="right">Right</button>
+		<button id="down">Down</button>
+	</div>
+
+
+	<!-- ===js file ======-->
+	<script src="js/jquery-3.4.1.min.js" type="text/javascript"></script>
+	<!-- <script src="js/main.js" type="text/javascript"></script> -->
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			
+			//animate basic structure
+			// $(".box").animate({}, function(){});
+			
+			$("#up").click(function(){
+				
+				$(".box").animate({
+					top:"-=40px",
+					opacity:"+=0.1"
+				}, function(){
+					//take action when animation is complete
+				});
+
+			}); //end up
+
+			$("#down").click(function(){
+				
+				$(".box").animate({
+					top:"+=40px",
+					opacity:"-=0.1"
+				}, function(){
+					//take action when animation is complete
+				});
+
+			}); //end down
+
+
+			$("#left").click(function(){
+				
+				$(".box").animate({
+					left:"-=40px",
+					fontSize:"+=2px"
+				}, function(){
+					//take action when animation is complete
+				});
+
+			}); //end up	
+
+			$("#right").click(function(){
+				
+				$(".box").animate({
+					left:"+=40px",
+					fontSize:"-=2px"
+				}, function(){
+					//take action when animation is complete
+				});
+
+			}); //end up									
+
+		});
+	</script>
+</body>
+</html>
