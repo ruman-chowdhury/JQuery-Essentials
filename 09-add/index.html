@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Add</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	
+	<p>This is a paragraph.</p>
+
+	<ol id="myList">
+	  <li>List item 1</li>
+	  <li>List item 2</li>
+	  <li>List item 3</li>
+	</ol>
+
+	<button id="btn1">Append text</button>
+	<button id="btn2">Append list items</button>
+
+	<br><br>
+	<button id="btn3"> Prepend text</button>
+	<button id="btn4">Prepend list items</button>
+
+	<hr>
+	<button onclick="appendText()">Add Element</button>	
+	<div id="myDiv"> </div>
+
+	<hr>
+	<button id="btn5"> Insert Before </button>
+	<button id="btn6"> Insert After </button>
+	<br><br>
+	<div id="divBox"> </div>
+
+	<!-- ===js file ======-->
+	<script src="js/jquery-3.4.1.min.js" type="text/javascript"></script>
+	<!-- <script src="js/main.js" type="text/javascript"></script> -->
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			
+			//append text/html
+			$("#btn1").on('click',function(){
+				$("p").append("<b> Appended Text </b>");
+			});
+
+			$("#btn2").on('click',function(){
+				$("#myList").append("<li>Appended List</li>");
+			});
+
+			//prepend text/html
+			$("#btn3").on('click',function(){
+				$("p").prepend("<b> Prepend Text. </b>")
+			});
+
+			$("#btn4").on('click',function(){
+				$("#myList").prepend("<li> Prepend List </li>");
+			});
+
+			//insert before,after
+			$("#btn5").on('click',function(){
+				$("#divBox").before("<b>Inserted Before</b>");
+			});
+
+			$("#btn6").on('click',function(){
+				$("#divBox").after("<i>Inserted after</i>");
+			});
+
+		});
+
+		//append sevaral text
+		function appendText(){
+			var text1 = "<h1> Heading </h1>"; //text with html
+
+			var text2 = $("<p> </p>").text("small paragraph"); //text with jquery
+
+			var text3 = document.createElement("h3");
+			text3.innerHTML = "Another heading Tag"; //text with DOM
+
+			$("#myDiv").append(text1,text2,text3); //append new elements
+		}
+
+	</script>
+</body>
+</html>
